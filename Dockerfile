@@ -1,7 +1,7 @@
 FROM alpine:latest
 
 # ----------------------------------------
-# # Buildingtool Install
+# Buildingtool Install
 # ----------------------------------------
 RUN apk add --update git curl openssh bash
 
