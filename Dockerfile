@@ -21,7 +21,7 @@ RUN curl https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform
 	rm -f terraform_${TERRAFORM_VERSION}_SHA256SUMS
 
 # ----------------------------------------
-# tfnotify Install
+# Tfnotify Install
 # refs: https://github.com/mercari/tfnotify/releases
 # ----------------------------------------
 ARG TFNOTIFY_VERSION=v0.3.0
@@ -30,4 +30,13 @@ RUN curl -sLJO https://github.com/mercari/tfnotify/releases/download/${TFNOTIFY_
 	mv tfnotify_${TFNOTIFY_VERSION}_linux_amd64/tfnotify /bin/tfnotify && \
 	rm -f tfnotify_${TFNOTIFY_VERSION}_linux_amd64.tar.gz && \
 	rm -rf tfnotify_${TFNOTIFY_VERSION}_linux_amd64
+
+# ----------------------------------------
+# Tflint Install
+# refs: https://github.com/wata727/tflint/releases
+# ----------------------------------------
+ARG TFLINT_VERSION=v0.7.3
+RUN curl -L -o tflint.zip https://github.com/wata727/tflint/releases/download/${TFLINT_VERSION}/tflint_linux_amd64.zip && \
+	unzip tflint.zip -d /usr/local/bin && \
+	rm -f tflint.zip
 

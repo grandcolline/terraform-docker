@@ -1,5 +1,5 @@
 # terraform-docker
-テラフォームをCIで使うためのイメージ。  
+テラフォームをCIで使うためのイメージ。
 
 ## Image
 
@@ -9,4 +9,5 @@
 
 * [Terraform](https://github.com/hashicorp/terraform)
 * [Tfnotify](https://github.com/mercari/tfnotify)
+* [Tflint](https://github.com/wata727/tflint)
 
