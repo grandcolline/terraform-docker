@@ -10,8 +10,8 @@ RUN apk add --update git curl openssh bash
 # refs: https://github.com/hashicorp/docker-hub-images/blob/master/terraform/Dockerfile-light
 # refs: https://www.terraform.io/downloads.html
 # ----------------------------------------
-ARG TERRAFORM_VERSION=0.11.10
-ARG TERRAFORM_SHA256SUM=43543a0e56e31b0952ea3623521917e060f2718ab06fe2b2d506cfaa14d54527
+ARG TERRAFORM_VERSION=0.11.11
+ARG TERRAFORM_SHA256SUM=94504f4a67bad612b5c8e3a4b7ce6ca2772b3c1559630dfd71e9c519e3d6149c
 
 RUN curl https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip > terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
 	echo "${TERRAFORM_SHA256SUM}  terraform_${TERRAFORM_VERSION}_linux_amd64.zip" > terraform_${TERRAFORM_VERSION}_SHA256SUMS && \
@@ -24,7 +24,7 @@ RUN curl https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform
 # tfnotify Install
 # refs: https://github.com/mercari/tfnotify/releases
 # ----------------------------------------
-ARG TFNOTIFY_VERSION=v0.2.0
+ARG TFNOTIFY_VERSION=v0.3.0
 RUN curl -sLJO https://github.com/mercari/tfnotify/releases/download/${TFNOTIFY_VERSION}/tfnotify_${TFNOTIFY_VERSION}_linux_amd64.tar.gz > tfnotify_${TFNOTIFY_VERSION}_linux_amd64.tar.gz && \
 	tar -xf tfnotify_${TFNOTIFY_VERSION}_linux_amd64.tar.gz && \
 	mv tfnotify_${TFNOTIFY_VERSION}_linux_amd64/tfnotify /bin/tfnotify && \
