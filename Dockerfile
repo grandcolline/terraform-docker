@@ -10,8 +10,8 @@ RUN apk add --update git curl openssh bash
 # refs: https://github.com/hashicorp/docker-hub-images/blob/master/terraform/Dockerfile-light
 # refs: https://www.terraform.io/downloads.html
 # ----------------------------------------
-ARG TERRAFORM_VERSION=0.11.11
-ARG TERRAFORM_SHA256SUM=94504f4a67bad612b5c8e3a4b7ce6ca2772b3c1559630dfd71e9c519e3d6149c
+ARG TERRAFORM_VERSION=0.12.0
+ARG TERRAFORM_SHA256SUM=42ffd2db97853d5249621d071f4babeed8f5fdba40e3685e6c1013b9b7b25830
 RUN curl https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip > terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
 	echo "${TERRAFORM_SHA256SUM}  terraform_${TERRAFORM_VERSION}_linux_amd64.zip" > terraform_${TERRAFORM_VERSION}_SHA256SUMS && \
 	sha256sum -cs terraform_${TERRAFORM_VERSION}_SHA256SUMS && \
@@ -34,7 +34,7 @@ RUN curl -sLJO https://github.com/mercari/tfnotify/releases/download/${TFNOTIFY_
 # Tflint Install
 # refs: https://github.com/wata727/tflint/releases
 # ----------------------------------------
-ARG TFLINT_VERSION=v0.7.3
+ARG TFLINT_VERSION=v0.8.1
 RUN curl -L -o tflint.zip https://github.com/wata727/tflint/releases/download/${TFLINT_VERSION}/tflint_linux_amd64.zip && \
 	unzip tflint.zip -d /usr/local/bin && \
 	rm -f tflint.zip
