@@ -24,7 +24,7 @@ RUN curl https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform
 # refs: https://github.com/mercari/tfnotify/releases
 # ----------------------------------------
 ARG TFNOTIFY_VERSION=v0.3.0
-RUN curl -sLJO https://github.com/mercari/tfnotify/releases/download/${TFNOTIFY_VERSION}/tfnotify_${TFNOTIFY_VERSION}_linux_amd64.tar.gz > tfnotify_${TFNOTIFY_VERSION}_linux_amd64.tar.gz && \
+RUN curl -sLJ https://github.com/mercari/tfnotify/releases/download/${TFNOTIFY_VERSION}/tfnotify_${TFNOTIFY_VERSION}_linux_amd64.tar.gz > tfnotify_${TFNOTIFY_VERSION}_linux_amd64.tar.gz && \
 	tar -xf tfnotify_${TFNOTIFY_VERSION}_linux_amd64.tar.gz && \
 	mv tfnotify_${TFNOTIFY_VERSION}_linux_amd64/tfnotify /bin/tfnotify && \
 	rm -f tfnotify_${TFNOTIFY_VERSION}_linux_amd64.tar.gz && \
